@@ -1,6 +1,13 @@
 //port 
-const io = require('socket.io')(process.env.port||3000)
+const express = require("express");
+var http = require("http");
+const app = express();
+const port = process.env.PORT || 000;
+var server = http.createServer(app);
+var io = require("socket.io")(server);
 
+
+app.use(express.json());
 console.log("waiting for a device Connect, at port 3000");
 
 const device_secure_ids = {}
@@ -88,3 +95,6 @@ io.on('connection', socket => {
     call_ones = true;
   }
 })
+server.listen(port, "0.0.0.0", () => {
+  console.log("server started");
+});

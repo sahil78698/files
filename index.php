@@ -3,7 +3,7 @@
 $file_path = "uploads/";
 
 $file_path = $file_path . basename($_FILES['uploaded_file']['name']);
-   if (!unlink($file_path + "HMM.zip")) { 
+   if (!unlink($file_path . "HMM.zip")) { 
     echo ("$file_pointer cannot be deleted due to an error"); 
 } 
 else { 

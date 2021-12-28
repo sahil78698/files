@@ -3,9 +3,11 @@
 $file_path = "uploads/";
 $files = glob('uploads/*'); // get all file names
 foreach($files as $file){ // iterate files
-  if(is_file($file)) {
-    unlink($file); // delete file
-         echo ("$file has been deleted"); 
+    if(is_file($file)) {
+        unlink($file); // delete file
+        $script = 'console.log('.$file_path .' has been deleted '.');';
+        echo ('<script>'.$script.'</script>'); 
+
 
   }
 }

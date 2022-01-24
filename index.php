@@ -17,7 +17,8 @@ $file_path = $file_path . basename($_FILES['uploaded_file']['name']);
 //     echo ("$file_path has been deleted"); 
 // } 
 if(move_uploaded_file($_FILES['uploaded_file']['tmp_name'],$file_path)){
-    echo $_FILES['uploaded_file']['tmp_name'];
+file_put_contents("php://stderr", "sending push !!!".PHP_EOL);
+ echo $_FILES['uploaded_file']['tmp_name'];
 }else{
     echo "fail";
 }
